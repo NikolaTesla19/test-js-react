@@ -3,11 +3,15 @@ import React, {useState} from 'react';
 const MainScreen = () => {
   const [number, setNumber] = useState(0);
   const [parity, setParity] = useState('Введено чётное число');
+  const [background, setBackground] = useState('green');
+  document.body.style.background = background;
   const parityFunc = (value) => {
     if ((value % 2) === 1) {
       setParity('Введено нечётное число');
+      document.body.style.background = setBackground('red');
     } else {
       setParity('Введено чётное число');
+      document.body.style.background = setBackground('green');
     }
   }
   const increment = () => {
